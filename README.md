@@ -23,7 +23,7 @@ Step 3 : Open a new terminal and change directory to Edgistify_BlogPost/client a
 
          cd Edgistify_BlogPost/client 
 	 
-	 npm install
+	     npm install
 
 
 
