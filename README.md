@@ -1,44 +1,38 @@
 
-#Edgistify_BlogPost
+# EDGISTIFY_BLOGPOST
 
-Getting Started
+# Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Prerequisites
+# Prerequisites
 You are going to need Node.js and npm installed on your machine.
 
-Installing
-How to properly install and configure this repository to work on your machine.
+# Installation
+Follow the below steps to install and configure this repository to work on your machine.
 
-Cloning the repository
+Step 1 : Cloning the repository
+        git clone "https://github.com/Satyam3976/Edgistify_BlogPost.git"
 
-git clone ...
-Enter cloned directory
+Step 2 : cd Edgistify_BlogPost/
+         Run the command npm install in the terminal
 
-cd file-upload/
-Enter Backend directory and do npm install
+Step 3 : Open a new terminal 
+         cd Edgistify_BlogPost/client 
+				 Run the command npm install in the terminal
 
-cd file-upload/backend && npm install --save
-Enter Frontend directory and do npm install
-
-cd file-upload/frontend && npm install --save
 Starting the repository on your machine
-You will need to run Backend & Frontend seperately, ports are already configured, make sure you don't conflict them if you change anything.
 
-Enter Frontend directory and do npm start
+You will need to run Backend & Frontend seperately, ports are already configured.
 
-cd file-upload/frontend && npm start
-Enter Backend directory and do npm start
+Step 4 : In both the terminals run the command npm start .
 
-cd file-upload/backend && npm start
 Now you can load localhost:3000 in your browser and use the app.
 
-Built With
-React - Frontend javascript library
-Node - Backend framework
-Express - Node.js web application framework
-Authors
-Antonio Erdeljac - Initial work - File-Upload-Tutorial
-Acknowledgments
-This is a repository for my Medium.com tutorial
-AirBnB's coding rules are applied in the frontend.
+# Tech Stack Used
+1.)React - Frontend javascript library
+2.)Node - Backend framework
+3.)Express - Node.js web application framework
+
+# Author
+Satyam Chaudhary
+
