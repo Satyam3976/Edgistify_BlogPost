@@ -3,14 +3,14 @@
     box-sizing: border-box;
     padding: 25px;
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
-    /* flex-flow: column nowrap; */
+    flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
   
   }
-
+  
   .comments {
     overflow: auto;
     width: 75%;
@@ -30,15 +30,15 @@
   
   .singleCommentContent {
     min-width: 100px;
-    /* background-color: #fff; */
+    background-color: #fff;
     border-radius: 25px;
-    /* padding: 10px; */
-    /* display: inline-flex; */
+    padding: 10px;
+    display: inline-flex;
   }
   
   .userImage {
-    height: 50px;
-    margin-right: 20px;
+    height: 35px;
+    margin-right: 10px;
     border-radius: 50%;
   }
   
@@ -46,13 +46,12 @@
   .singleCommentContent h3 {
     margin: 0;
     padding-right: 5px;
-    margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 12px;
     color: #385997;
   }
   
   .singleCommentContent p {
-    font-size: 15px;
+    font-size: 12px;
     margin: 0;
   }
   
@@ -76,18 +75,18 @@
     letter-spacing: 0.05em;
   }
   
-  .comment_form {
+  .form {
     width: 70%;
-    min-width: 800px;
+    min-width: 300px;
     max-width: 700px;
   }
   
-  .comment_form form {
+  .form form {
     display: flex;
     padding: 15px 0;
   }
   
-  .comment_form input {
+  .form input {
     height: 30px;
     padding-left: 10px;
     border: 1px solid #c1c1c1;
@@ -96,17 +95,17 @@
     flex: 3;
   }
   
-  .comment_form input:first-child {
+  .form input:first-child {
     flex: 1;
   }
   
-  .comment_form button {
+  .form button {
     color: #999;
     border-radius: 5px;
     border: 1px solid #999;
   }
   
-  .comment_form button:hover {
+  .form button:hover {
     cursor: pointer;
     color: #385997;
     border-color: #385997;

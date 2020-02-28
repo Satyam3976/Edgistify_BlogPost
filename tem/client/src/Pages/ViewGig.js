@@ -24,10 +24,9 @@ class ViewGig extends React.Component {
       .then(res => {
         this.setState({ gig: res.data.gig });
       })
-    
       .catch(err => {
         console.log(err)
-      })  
+      })
   }
   render() {
     const { gig } = this.state;
@@ -35,22 +34,20 @@ class ViewGig extends React.Component {
       <section id="view-gig">
         {
           <React.Fragment>
+          <div key={gig._id} classame="gig-card">
+            <h2>Title: {gig.title}</h2>
+            <p>Description: {gig.desc}</p>
+            <p>Offer: {gig.offer}</p>
+            <p>Negotiable: {gig.negotiable ? 'Yes' : 'No'}</p>
+            <p>DeadLine: {gig.deadline}</p>
+          </div>
           <div className="container">
-            <div key={gig._id} classame="gig-card">
-              <h2>Title: {gig.title}</h2>
-              <p>Description: {gig.desc}</p>
-              <p>Offer: {gig.offer}</p>
-              <p>Negotiable: {gig.negotiable ? 'Yes' : 'No'}</p>
-              <p>DeadLine: {gig.deadline}</p>
+            <div className="comments">
+              <h2>Comments:</h2>
+              <CommentList data={DATA}/>
             </div>
-            <div>
-                <div className="comments">
-                  <h2>Comments:</h2>
-                  <CommentList data={DATA}/>
-                </div>
-                <div className="comments_form">
-                  <CommentForm sat={this.props} />
-                </div>
+            <div className="form">
+              <CommentForm />
             </div>
           </div>
           </React.Fragment>
