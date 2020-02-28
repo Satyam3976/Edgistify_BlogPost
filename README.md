@@ -14,18 +14,24 @@ Step 1 : Cloning the repository
         git clone "https://github.com/Satyam3976/Edgistify_BlogPost.git"
 
 Step 2 : Change directory to Edgistify_BlogPost by running the command
+
          cd Edgistify_BlogPost/
+	 
          Run the command  npm install in the terminal
 
 Step 3 : Open a new terminal and change directory to Edgistify_BlogPost/client by running the command
+
          cd Edgistify_BlogPost/client 
+	 
 	 Run the command npm install in the terminal
 
 You will need to run Backend & Frontend seperately!
 
 Step 4 : In the first terminal where directory is Edgistify_BlogPost run the command npm start
+
          then, in the second terminal where directory is Edgistify_BlogPost run the command npm start
-	 It will ask Would you like to change the server as something is already running on port:300 ,click yes.
+	 
+	 It will ask Would you like to change the server as something is already running on port:3000 click yes.
          
 And finally the server will be loaded!
 
