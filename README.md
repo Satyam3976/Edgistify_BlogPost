@@ -35,6 +35,8 @@ Now you can load localhost:3000 in your browser and use the app.
 
 3.)Express - Node.js web application framework
 
+4.)MongoDB - Database Management
+
 # Author
 Satyam Chaudhary
 
