@@ -20,7 +20,7 @@ Step 3 : Open a new terminal
          cd Edgistify_BlogPost/client 
 				 Run the command npm install in the terminal
 
-Starting the repository on your machine
+Starting the repository on your machine.
 
 You will need to run Backend & Frontend seperately, ports are already configured.
 
