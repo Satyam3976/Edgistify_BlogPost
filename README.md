@@ -22,7 +22,7 @@ Step 2 : Change directory to Edgistify_BlogPost and install node_modules
 
 Step 3 : Open a new terminal and change directory to Edgistify_BlogPost/client and install node_modules
 
-            cd Edgistify_BlogPost/client 
+          cd Edgistify_BlogPost/client 
 	 
 	      npm install
 
@@ -32,9 +32,9 @@ Step 4 : You will need to run Backend & Frontend seperately!u will need to run B
 
 	    In the first terminal where directory is Edgistify_BlogPost run the command npm start 
 	 
-	     In the second terminal where directory is Edgistify_BlogPost/client run the command npm start
+	    In the second terminal where directory is Edgistify_BlogPost/client run the command npm start
 	 
-	     It will ask Would you like to change the server as something is already running on port:3000 click yes.
+	    It will ask Would you like to change the server as something is already running on port:3000 click yes.
          
 And finally the server will be loaded!
 
