@@ -30,7 +30,9 @@ Now you can load localhost:3000 in your browser and use the app.
 
 # Tech Stack Used
 1.)React - Frontend javascript library
+
 2.)Node - Backend framework
+
 3.)Express - Node.js web application framework
 
 # Author
