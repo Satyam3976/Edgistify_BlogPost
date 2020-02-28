@@ -10,7 +10,8 @@ You are going to need Node.js and npm installed on your machine.
 # Installation
 Follow the below steps to install and configure this repository to work on your machine.
 
-Step 1 : Cloning the repository
+Step 1 : Clone the repository
+
          git clone "https://github.com/Satyam3976/Edgistify_BlogPost.git"
 
 Step 2 : Change directory to Edgistify_BlogPost and install node_modules
@@ -21,7 +22,7 @@ Step 2 : Change directory to Edgistify_BlogPost and install node_modules
 
 Step 3 : Open a new terminal and change directory to Edgistify_BlogPost/client and install node_modules
 
-         cd Edgistify_BlogPost/client 
+             cd Edgistify_BlogPost/client 
 	 
 	     npm install
 
