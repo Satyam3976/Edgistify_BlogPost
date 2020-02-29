@@ -15,6 +15,7 @@ app.use(cors());
 
 const authRoutes = require('./routes/auth');
 const gigRoutes = require('./routes/gigs');
+const commentRoutes = require('./routes/comment');
 
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json())
@@ -30,7 +31,7 @@ app.use(
 
 app.use('/auth', authRoutes);
 app.use('/gigs', gigRoutes);
-
+app.use(commentRoutes);
 
 app.get('/', (req, res) => {
   res.send('Welcome')

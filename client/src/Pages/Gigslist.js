@@ -35,12 +35,20 @@ class Gigs extends Component {
         {this.state.gigs.map(function (e) {
           return (
             <div key={e._id} className="gig-card">
+              <div className="postlist">
+                <img src="https://images.unsplash.com/photo-1558980394-a3099ed53abb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" 
+                alt="Italian Trulli" className="postimg" />
+                </div>
               <div>
                 <h2>{e.title}</h2>
                 <p>{e.desc}</p>
                 <h4>Offer: {e.offer}</h4>
               </div>
+              <div className="postlink">
               <Link to={`viewgig#${e._id}`}>View</Link>
+              <button type="submit">Edit</button>
+              <button type="submit">Delete</button>
+              </div>
             </div>
           );
         })}

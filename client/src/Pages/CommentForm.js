@@ -9,25 +9,33 @@ class CommentForm extends React.Component {
     err: ''
   }
 
+  handleClear = e => {
+    // e.preventDefault();
+    this.setState({[e.target.name]: ''})
+  }
+
   handleChange = (e) => {
+    var el = document.getElementById('submitbtnid');
+    if(e.target.value===''?el.style.display= "none":el.style.display= "block")
     console.log('po'+ e.target.value);
     e.preventDefault();
     this.setState({ [e.target.name]: e.target.value })
   }
 
   handleSubmit = (e) => {
+    
     e.preventDefault()
 
     let hash = this.props.sat.location.hash;
-    let gigID = hash.split('#')[1];
-    console.log('satyam' + gigID)
+    let postId = hash.split('#')[1];
+    console.log('satyam' + postId)
 
     let userId = localStorage.getItem('userID');
     console.log(userId)
 
     console.log(this.props.sat)
     console.log(userId);
-    console.log(gigID)
+    console.log(postId)
 
     const { text } = this.state;
     if (!text) {
@@ -36,25 +44,28 @@ class CommentForm extends React.Component {
     }
     axios.post('/addComment', {
       userId,
-      gigID,
+      postId,
       text
     })
     .then(res => {
+      console.log(res)
       console.log('satyam67')
     })
-    .catch(err => console.error('chutiya'));
+    .catch(err => console.error(err));
   }
 
   render() {
     return (
-      <form>
+      <form className="submitForm">
         <input
           type="text"
           name="text"
-          placeholder="Say something..."
+          value={this.state.text}
+          placeholder="Want to Post Something"
           onChange={this.handleChange}
         />
-        <button type="submit" onClick={this.handleSubmit}>Submit</button>
+        <button type="submit" id="submitbtnid" onClick={this.handleSubmit}>Submit</button>
+        <button type="submit" onClick={this.handleClear}>Cancel</button>
         <h2>{this.state.err}</h2>
       </form>
     );

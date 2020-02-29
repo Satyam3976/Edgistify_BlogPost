@@ -48,7 +48,7 @@ class ViewGig extends React.Component {
                   <h2>Comments:</h2>
                   <CommentList data={DATA}/>
                 </div>
-                <div className="comments_form">
+                <div className="comment-form">
                   <CommentForm sat={this.props} />
                 </div>
             </div>

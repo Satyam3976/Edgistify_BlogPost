@@ -5,12 +5,12 @@ const Comment = require('../models/comment');
 
 
 exports.addComment = (req, res) => {
-  Comment.findById(req.body.userID)
+  User.findById(req.body.userId)
   .then(user => {
    
     Comment.create({
-      author: user.name,
-      postID:req.body.postID,
+      userName: user.name,
+      postId:req.body.postId,
       text:req.body.text
     })
     .then(comment => {
@@ -23,18 +23,10 @@ exports.addComment = (req, res) => {
     })
   })
 
-  // Comment.create(req.body)
-  // .then(result=>{
-  //   res.json({success:true})
-  // })
-  // .catch(err =>{
-  //   res.json({success:false})
-  // })
-
   };
 
 exports.getCommentById = (req, res) => {
-    comment.findById(req.body.postID)
+    comment.findById(req.body.postId)
     .then(comment => {
       res.json({ success: true, comment })
     })

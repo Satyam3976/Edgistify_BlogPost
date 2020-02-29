@@ -8,11 +8,12 @@ import Signup from "./Pages/Signup";
 import Gigs from "./Pages/Gigslist";
 import PostGig from "./Pages/PostGigs";
 import ViewGig from "./Pages/ViewGig";
+import Navigation from "../src/Shared/Navigation";
 
 function App() {
   return (
     <div id="page-container">
-      <Header />
+      {/* <Header /> */}
       <HashRouter basename="/">
         <Route path="/" component={Home} exact />
         <Route path="/login" component={Login} exact />
@@ -21,12 +22,13 @@ function App() {
         <Route path="/gigs" component={Gigs} exact />
         <Route path="/postgig" component={PostGig} exact />
         <Route path="/viewgig" component={ViewGig} exact />
+        <Navigation/>
       </HashRouter>
-      <img
+      {/* <img
         src="https://t3.ftcdn.net/jpg/02/31/04/60/240_F_231046089_SjH8WEU8VNfodwNPBTAk7o5oDQriuYVC.jpg"
         alt="bkg"
         id="bkg"
-      />
+      /> */}
     </div>
   );
 }
