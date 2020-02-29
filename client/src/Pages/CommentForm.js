@@ -5,18 +5,18 @@ import axios from 'axios';
 
 class CommentForm extends React.Component {
   state = {
-    text: '',
-    err: ''
+    text: ''
   }
 
-  handleClear = e => {
-    // e.preventDefault();
-    this.setState({[e.target.name]: ''})
-  }
+  // handleClear = e => {
+  //   // e.preventDefault();
+  //   this.setState({[e.target.name]: ''})
+  // }
+
 
   handleChange = (e) => {
     var el = document.getElementById('submitbtnid');
-    if(e.target.value===''?el.style.display= "none":el.style.display= "block")
+    if(e.target.value===''? el.style.display= "none": el.style.display= "block")
     console.log('po'+ e.target.value);
     e.preventDefault();
     this.setState({ [e.target.name]: e.target.value })
@@ -25,7 +25,7 @@ class CommentForm extends React.Component {
   handleSubmit = (e) => {
     
     e.preventDefault()
-
+    this.setState({text: ''})
     let hash = this.props.sat.location.hash;
     let postId = hash.split('#')[1];
     console.log('satyam' + postId)
@@ -38,10 +38,10 @@ class CommentForm extends React.Component {
     console.log(postId)
 
     const { text } = this.state;
-    if (!text) {
-      this.setState({ err: 'Please check your inputs' });
-      return;
-    }
+    // if (!text) {
+    //   this.setState({ err: 'Please check your inputs' });
+    //   return;
+    // }
     axios.post('/addComment', {
       userId,
       postId,
@@ -50,8 +50,12 @@ class CommentForm extends React.Component {
     .then(res => {
       console.log(res)
       console.log('satyam67')
+      this.props.onSelectLanguage('s');
     })
     .catch(err => console.error(err));
+
+    // var lang = this.dropdown.value;
+    // this.props.onSelectLanguage('s');
   }
 
   render() {
@@ -61,11 +65,12 @@ class CommentForm extends React.Component {
           type="text"
           name="text"
           value={this.state.text}
+          value={this.state.text}
           placeholder="Want to Post Something"
           onChange={this.handleChange}
         />
         <button type="submit" id="submitbtnid" onClick={this.handleSubmit}>Submit</button>
-        <button type="submit" onClick={this.handleClear}>Cancel</button>
+        {/* <button type="submit" onClick={this.handleClear}>Cancel</button> */}
         <h2>{this.state.err}</h2>
       </form>
     );

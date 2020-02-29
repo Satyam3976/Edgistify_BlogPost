@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const Gig = require('../models/postGig');
 const alotGig = require('../models/Gig');
+const Comment = require('../models/comment');
 
 exports.add = (req, res) => {
   Gig.create(req.body)
@@ -29,13 +30,17 @@ exports.getAll = (req, res) => {
 exports.getOne = (req, res) => {
   Gig.findById(req.body.gigID)
     .then(gig => {
-      res.json({ success: true, gig })
+      Comment.find({postId:req.body.gigID})
+    .then(comment => {
+      res.json({ success: true, comment,gig })
     })
+      
     .catch(err => {
       console.log(err);
       res.json({ success: false })
     })
-}
+  })
+};
 
 
 // exports.acceptGig =(req,res) => {

@@ -9,7 +9,7 @@ exports.addComment = (req, res) => {
   .then(user => {
    
     Comment.create({
-      userName: user.name,
+      author: user.name,
       postId:req.body.postId,
       text:req.body.text
     })
@@ -25,14 +25,23 @@ exports.addComment = (req, res) => {
 
   };
 
-exports.getCommentById = (req, res) => {
-    comment.findById(req.body.postId)
-    .then(comment => {
-      res.json({ success: true, comment })
-    })
-    .catch(err => {
-      console.log(err);
-      res.json({ success: false })
-    })
-}
+// exports.getCommentById = (req, res) => {
+
+//   Gig.findById(req.body.gigID)
+//   .then(gig => {
+//     res.json({ success: true, gig })
+//   })
+//   .catch(err => {
+//     console.log(err);
+//     res.json({ success: false })
+//   })
+//     // comment.findById(req.body.postId)
+//     // .then(comment => {
+//     //   res.json({ success: true, comment })
+//     // })
+//     // .catch(err => {
+//     //   console.log(err);
+//     //   res.json({ success: false })
+//     // })
+// }
 

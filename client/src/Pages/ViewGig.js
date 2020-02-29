@@ -14,7 +14,39 @@ class ViewGig extends React.Component {
       _id: '',
       deadline: '',
       negotiable: ''
-    }
+    },
+    comment: [
+      {
+        _id: '',
+        author: '',
+        postId: '',
+        text: ''
+      }
+    ]
+  }
+
+  // onChangeText = (e) => {
+  //   const newState = { ...this.state.comment };
+  //   // newState[e.target.name] = e.target.value;
+  //   this.setState(newState);
+  // }
+
+
+
+  handleChange=()=>{
+      // const { gigID } = this.props.location.state;
+      let hash = this.props.location.hash;
+      let gigID = hash.split('#')[1];
+      axios.post('//localhost:3000/gigs/getOne', { gigID })
+        .then(res => {
+          console.log(res);
+          this.setState({ gig: res.data.gig });
+          this.setState({comment: res.data.comment});
+        })
+      
+        .catch(err => {
+          console.log(err)
+        })  
   }
   componentDidMount() {
     // const { gigID } = this.props.location.state;
@@ -22,7 +54,9 @@ class ViewGig extends React.Component {
     let gigID = hash.split('#')[1];
     axios.post('//localhost:3000/gigs/getOne', { gigID })
       .then(res => {
+        console.log(res);
         this.setState({ gig: res.data.gig });
+        this.setState({comment: res.data.comment});
       })
     
       .catch(err => {
@@ -30,6 +64,8 @@ class ViewGig extends React.Component {
       })  
   }
   render() {
+    const { comment } = this.state;
+    console.log(comment);
     const { gig } = this.state;
     return (
       <section id="view-gig">
@@ -46,10 +82,10 @@ class ViewGig extends React.Component {
             <div>
                 <div className="comments">
                   <h2>Comments:</h2>
-                  <CommentList data={DATA}/>
+                  <CommentList data={comment}/>
                 </div>
                 <div className="comment-form">
-                  <CommentForm sat={this.props} />
+                  <CommentForm sat={this.props} onSelectLanguage={this.handleChange}/>
                 </div>
             </div>
           </div>
