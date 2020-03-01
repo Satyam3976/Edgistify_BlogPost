@@ -24,6 +24,8 @@ class Signup extends React.Component {
       .then(res => {
         if (res.data.success) {
           localStorage.setItem('token', res.data.accessToken)
+          localStorage.setItem('userID', res.data.userID)
+          localStorage.setItem('auth', "true")
           this.props.history.push('/displayPost');
         } else {
           this.setState({alert_message: 'error'})
@@ -43,7 +45,6 @@ class Signup extends React.Component {
     return (
       <>
       <Navigation onLogout={this.logoutHandler} />
-
       <section className="form">
         {this.state.alert_message==="error"?<Erroralert/>:null}
         <h2 className="title">Sign Up:</h2>
@@ -53,9 +54,11 @@ class Signup extends React.Component {
             <label>Email:</label>
             <input type="email" required email="email" onChange={(e) => this.setState({ email: e.target.value })} />
             <div id="show-pass">
+              <div className="signpass">
               <label style={{ paddingBottom: "10px" }}>Password</label>
               <input type={this.state.showPass ? "password" : "text"} required
                 onChange={(e) => this.setState({ password: e.target.value })}/>
+              </div>  
               <div id="check-box">
                 <input id="check" type="checkbox" onClick={() => this.setState({ showPass: !this.state.showPass })} />
                 <label>Show Password</label>
