@@ -7,14 +7,6 @@ import Navigation from "../Shared/Navigation";
 
 class ViewPost extends React.Component {
   state = {
-    // gig: {
-    //   title: '',
-    //   desc: '',
-    //   offer: '',
-    //   _id: '',
-    //   deadline: '',
-    //   negotiable: ''
-    // },
      post: {
       title: '',
       content:'',

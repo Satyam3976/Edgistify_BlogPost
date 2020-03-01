@@ -90,12 +90,12 @@ exports.acceptGig = (req, res) => {
     })
 }
 
-exports.deleteOneGig = (req, res) => {
-  Gig.findByIdAndRemove(req.params.id)
-    .then(gig => {
-      if (!gig) {
+exports.deletePost = (req, res) => {
+  Post.findByIdAndRemove(req.body.postID)
+    .then(post => {
+      if (!post) {
         return res.status(404).json({
-          message: "not Found"
+          success: false
         });
       }
       res.json({ success: true })

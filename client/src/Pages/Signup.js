@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import Navigation from "../Shared/Navigation";
 import Password from '../Components/Password'
+import Erroralert from './ErrorAlertSignup';
+
 
 
 class Signup extends React.Component {
@@ -10,7 +12,8 @@ class Signup extends React.Component {
     showPass: true,
     name: '',
     email: '',
-    password: ''
+    password: '',
+    alert_message: ''
   }
 
   handleSubmit = (e) => {
@@ -20,11 +23,12 @@ class Signup extends React.Component {
     axios.post('//localhost:3000/auth/add', { name: name, email: email, password: password })
       .then(res => {
         if (res.data.success) {
-          console.log(res.data)
+          console.log(res.data.success)
           localStorage.setItem('token', res.data.accessToken)
           this.props.history.push('/displayPost');
         } else {
-          console.log(res.data)
+          console.log(res.data.success)
+          this.setState({alert_message: 'error'})
           this.props.history.push('/signup');
         }
       })
@@ -43,6 +47,7 @@ class Signup extends React.Component {
       <Navigation onLogout={this.logoutHandler} />
 
       <section className="form">
+        {this.state.alert_message==="error"?<Erroralert/>:null}
         <h2 className="title">Sign Up:</h2>
         <form id="log-in" onSubmit={this.handleSubmit}>
           <label>Name:</label>

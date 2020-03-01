@@ -61,8 +61,6 @@ class Posts extends Component {
               <div className="postlink">
               {/* <Link to={`viewgig#${e._id}`}>View</Link> */}
                <Link to={`ViewPost#${e._id}`}>View</Link>
-              <button type="submit">Edit</button>
-              <button type="submit">Delete</button>
               </div>
             </div>
           );

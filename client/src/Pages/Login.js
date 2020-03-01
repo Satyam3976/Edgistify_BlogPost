@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { PromiseProvider } from "mongoose";
 import { PropTypes } from 'react'
 import Navigation from "../Shared/Navigation";
+import { useAlert } from 'react-alert'
 
 const logoutHandler = () => {
   // this.setState({ loggedIn: false});
@@ -14,7 +15,7 @@ const logoutHandler = () => {
 
 const Login = (props)=> {
 
-
+  const alert = useAlert()
 
   console.log(props.updateUser);
   const [email, setEmail] = useState('');
@@ -30,6 +31,7 @@ const Login = (props)=> {
           props.history.push('/displayPost');
         } else {
           console.log(res.data)
+          alert.show('Please enter valid credentials')
           props.history.push('/login');
         }
       })
@@ -46,7 +48,8 @@ const Login = (props)=> {
         <input type="password" required
           onChange={(e) => setPass(e.target.value)}
         />
-        <input type="submit" className="btn"/>
+        <button type="submit" className="btn">Login</button>
+        {/* <input type="submit" className="btn"/> */}
         <Link to="/signup">New here? Sign Up!</Link>
       </form>
     </section>

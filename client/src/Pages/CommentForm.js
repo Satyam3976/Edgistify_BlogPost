@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-
+import Erroralert from './ErrorAlertComment';
 
 class CommentForm extends React.Component {
   state = {
-    text: ''
+    text: '',
+    alert_message: ''
   }
 
   // handleClear = e => {
@@ -16,8 +17,10 @@ class CommentForm extends React.Component {
 
   handleChange = (e) => {
     var el = document.getElementById('submitbtnid');
+    if(localStorage.getItem('token')==='')
+      this.setState({alert_message: 'error'})
     if(e.target.value===''? el.style.display= "none": el.style.display= "block")
-    console.log('po'+ e.target.value);
+    // console.log('po'+ e.target.value);
     e.preventDefault();
     this.setState({ [e.target.name]: e.target.value })
   }
@@ -61,6 +64,7 @@ class CommentForm extends React.Component {
   render() {
     return (
       <form className="submitForm">
+        {this.state.alert_message==="error"?<Erroralert/>:null}
         <input
           type="text"
           name="text"

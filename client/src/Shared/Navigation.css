@@ -30,3 +30,9 @@
     /* font-size: 1rem !important; */
     border-bottom: 2px solid #4caf50;
 }
+
+@media only screen and (max-width: 320px) {
+    .navbar .logout-button{
+        font-size: 10px;
+    }
+}

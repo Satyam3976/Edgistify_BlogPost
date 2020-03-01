@@ -11,6 +11,7 @@ import ViewPost from "./Pages/ViewPost";
 import Navigation from "../src/Shared/Navigation";
 import { PropTypes } from 'react'
 
+
 class App extends React.Component {
   constructor() {
     super();
@@ -30,7 +31,7 @@ class App extends React.Component {
     localStorage.setItem('token', '');
     localStorage.setItem('auth', 'false');
   };
-
+  
   render(){
   return (
     <div id="page-container">
