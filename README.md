@@ -49,9 +49,13 @@ And finally the server will be loaded!
 
 # Functionalities in the app
 1.) Register and login using valid email ID.
+
 2.) Website have responsive layouts which automatically adjust and adapt to any device screen size.
+
 3.) Users can view the post and also comment on the post after logging in.
+
 4.) Users can also post after logging in.
+
 5.) Users can view the post without logging in.
 
 
