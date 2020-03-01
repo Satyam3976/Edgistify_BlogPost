@@ -4,11 +4,9 @@ const Comment = require('../models/comment');
 exports.createPost = (req, res) => {
   Post.create(req.body)
     .then(post => {
-      console.log(post)
       res.json({ success: true })
     })
     .catch(err => {
-      console.log(err);
       res.json({ success: false })
     })
 }
@@ -20,7 +18,6 @@ exports.displayPosts = (req, res) => {
       res.json({ success: true, posts })
     })
     .catch(err => {
-      console.log(err);
       res.json({ success: false })
     })
 }
@@ -34,75 +31,11 @@ exports.displayPost = (req, res) => {
       res.json({ success: true, comment,post })
     })
      .catch(err => {
-      console.log(err);
       res.json({ success: false })
     })
   })
 };
 
 
-// exports.acceptGig =(req,res) => {
-//   Gig.findById(req.params.id)
-//   .then(gig => {
-//      userGid:gig.userId
-//      alotGig.create(
-//        {
-//         userGid:userGid,
-//         userTid:req.userId
-//        })
-//      .then(gig => {
-//        console.log(gig)
-//        res.json({ success: true })
-//      })
-//      .catch(err => {
-//        console.log(err);
-//       res.json({ success: false })
-//      })
 
-//   })
-// }
-
-exports.acceptGig = (req, res) => {
-  alotGig.findOne({ gidID: req.body.gigID })
-    .then(gig => {
-      if (gig) {
-        let newUsers = gig.userTid;
-        newUsers.push(req.body.userId);
-        gig.UserTid = newUsers;
-        alotGig.findByIdAndUpdate(gig)
-          .then(newGig => {
-            res.json({ success: true })
-          })
-          .catch(err => {
-            console.log(err)
-            res.json({ success: false });
-          })
-      } else {
-        alotGig.create(req.body)
-          .then(newGig => {
-            res.json({ success: true })
-          })
-          .catch(err => {
-            console.log(err);
-            res.json({ success: false })
-          })
-      }
-    })
-}
-
-exports.deletePost = (req, res) => {
-  Post.findByIdAndRemove(req.body.postID)
-    .then(post => {
-      if (!post) {
-        return res.status(404).json({
-          success: false
-        });
-      }
-      res.json({ success: true })
-    })
-    .catch(err => {
-      console.log(err);
-      res.json({ success: false })
-    })
-}
 
