@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-around; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   margin-top: 40px;
   margin-left: 20px;
   margin-right: 20px;
@@ -125,3 +125,17 @@
       grid-template-columns: 1fr 1fr; 
     }
 }  */
+
+@media only screen and (min-width: 700px)
+{
+  #gig-cards-list{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #gig-cards-list{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+

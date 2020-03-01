@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import Navigation from "../Shared/Navigation";
 import Password from '../Components/Password'
 
 
@@ -22,6 +23,9 @@ class Signup extends React.Component {
           console.log(res.data)
           localStorage.setItem('token', res.data.accessToken)
           this.props.history.push('/');
+          this.props.handle({
+            loggedIn: true
+          });
         } else {
           console.log(res.data)
           this.props.history.push('/signup');
@@ -29,8 +33,18 @@ class Signup extends React.Component {
       })
   }
 
+  logoutHandler = () => {
+    // this.setState({ loggedIn: false});
+    localStorage.setItem('userID', '');
+    localStorage.setItem('token', '');
+    localStorage.setItem('auth', 'false');
+  };
+
   render() {
     return (
+      <>
+      <Navigation onLogout={this.logoutHandler} />
+
       <section className="form">
         <h2 className="title">Sign Up:</h2>
         <form id="log-in" onSubmit={this.handleSubmit}>
@@ -52,6 +66,7 @@ class Signup extends React.Component {
           <Link to="/login">Already have an account? Login</Link>
         </form>
       </section>
+      </>
     );
   }
 }

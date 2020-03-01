@@ -1,6 +1,5 @@
 const User = require('../models/user');
-const Gig = require('../models/postGig');
-const alotGig = require('../models/Gig');
+const Gig = require('../models/post');
 const Comment = require('../models/comment');
 
 

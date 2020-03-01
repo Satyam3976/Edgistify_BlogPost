@@ -1,6 +1,19 @@
-.navigation-btn-1{
-    margin-left: 85%;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 16px;
 }
-.navigation-btn-1{
-    margin-left: 80%;
+
+.navbar .title  {
+    text-decoration: none;
+    color: green;
+}
+
+.navbar .logout-button{
+    margin: 16px;
+    background: green;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
 }

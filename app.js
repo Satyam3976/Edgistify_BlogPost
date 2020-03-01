@@ -1,7 +1,6 @@
 const path = require('path');
 const cors = require('cors');
 const express = require('express');
-// const bodyParser=require('body-parser');
 const session = require('express-session');
 const mongoose = require('mongoose');
 
@@ -14,10 +13,11 @@ app.set('views', 'views');
 app.use(cors());
 
 const authRoutes = require('./routes/auth');
-const gigRoutes = require('./routes/gigs');
+const postRoutes = require('./routes/post');
 const commentRoutes = require('./routes/comment');
 
-// app.use(bodyParser.urlencoded({ extended: true }));
+
+
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
@@ -30,8 +30,9 @@ app.use(
 
 
 app.use('/auth', authRoutes);
-app.use('/gigs', gigRoutes);
+app.use('/post', postRoutes);
 app.use(commentRoutes);
+
 
 app.get('/', (req, res) => {
   res.send('Welcome')

@@ -1,8 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navigation from '../Shared/Navigation';
+
+const logoutHandler = () => {
+  // this.setState({ loggedIn: false});
+  localStorage.setItem('userID', '');
+  localStorage.setItem('token', '');
+  localStorage.setItem('auth', 'false');
+};
 
 function Home() {
   return (
+    <>
+    <Navigation onLogout={logoutHandler} />
     <section className="define">
       <h2>Find the work that suits you</h2>
       <h2>Or get your tasks done</h2>
@@ -15,9 +25,9 @@ function Home() {
       </p>
       <h3>We only serve Win-wins</h3>
       <h3 style={{ marginTop: "10px" }}>Have A job? Get it done here:</h3>
-      <Link to="/postgig">Post A Gig</Link>
+      <Link to="/createPost">Post A Gig</Link>
       <h3>Want to work? Look here:</h3>
-      <Link to="/gigs">View Gigs</Link>
+      <Link to="/displayPost">View Gigs</Link>
 
 
       {/* <Link to="/signup" id="left_hover">
@@ -26,11 +36,12 @@ function Home() {
       <Link to="/login" id="right_hover">
         Log In
        </Link> */}
-      {localStorage.getItem('token') === '' ? <Link to='/signup' id="left_hover">Sign Up</Link> : '' }
+      {/* {localStorage.getItem('token') === '' ? <Link to='/signup' id="left_hover">Sign Up</Link> : '' }
       {localStorage.getItem('token') === '' ? <Link to='/login' id="right_hover">Log In</Link> : '' }
-      {localStorage.getItem('token') === '' ? '' : <Link to='/logout'>Logout</Link>}
+      {localStorage.getItem('token') === '' ? '' : <Link to='/logout'>Logout</Link>} */}
 
     </section>
+    </>
   );
 }
 

@@ -1,12 +1,10 @@
-const User = require('../models/user');
-const Gig = require('../models/postGig');
-const alotGig = require('../models/Gig');
+const Post = require('../models/post');
 const Comment = require('../models/comment');
 
-exports.add = (req, res) => {
-  Gig.create(req.body)
-    .then(gig => {
-      console.log(gig)
+exports.createPost = (req, res) => {
+  Post.create(req.body)
+    .then(post => {
+      console.log(post)
       res.json({ success: true })
     })
     .catch(err => {
@@ -15,10 +13,11 @@ exports.add = (req, res) => {
     })
 }
 
-exports.getAll = (req, res) => {
-  Gig.find({})
-    .then(gigs => {
-      res.json({ success: true, gigs })
+exports.displayPosts = (req, res) => {
+  Post.find({})
+  .sort('-createdAt')
+    .then(posts => {
+      res.json({ success: true, posts })
     })
     .catch(err => {
       console.log(err);
@@ -27,15 +26,14 @@ exports.getAll = (req, res) => {
 }
 
 
-exports.getOne = (req, res) => {
-  Gig.findById(req.body.gigID)
-    .then(gig => {
-      Comment.find({postId:req.body.gigID})
+exports.displayPost = (req, res) => {
+  Post.findById(req.body.postID)
+    .then(post => {
+      Comment.find({postId:req.body.postID})
     .then(comment => {
-      res.json({ success: true, comment,gig })
+      res.json({ success: true, comment,post })
     })
-      
-    .catch(err => {
+     .catch(err => {
       console.log(err);
       res.json({ success: false })
     })

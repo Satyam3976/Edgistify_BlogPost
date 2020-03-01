@@ -58,13 +58,13 @@
     }
   
     .nav-links a {
-      color: white;
+      color: rgb(15, 168, 66);
       text-decoration: none;
     }
   
     .nav-links button {
-      border: 1px solid white;
-      color: white;
+      border: 1px solid rgb(27, 185, 88);
+      color: rgb(21, 168, 65);
       background: transparent;
     }
     

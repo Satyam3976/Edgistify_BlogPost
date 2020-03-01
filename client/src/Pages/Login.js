@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { PromiseProvider } from "mongoose";
+import { PropTypes } from 'react'
+import Navigation from "../Shared/Navigation";
 
+const logoutHandler = () => {
+  // this.setState({ loggedIn: false});
+  localStorage.setItem('userID', '');
+  localStorage.setItem('token', '');
+  localStorage.setItem('auth', 'false');
+};
 
+const Login = (props)=> {
 
-function Login(props) {
+  console.log(props.updateUser);
   const [email, setEmail] = useState('');
   const [password, setPass] = useState('');
   const handleLogin = (e) => {
@@ -14,7 +24,9 @@ function Login(props) {
         if (res.data.success) {
           localStorage.setItem('token', res.data.accessToken)
           localStorage.setItem('userID', res.data.userID)
-          props.history.push('/gigs');
+          localStorage.setItem('auth', "true")
+          props.history.push('/displayPost');
+          //props.updateUser({loggedIn: true})
         } else {
           console.log(res.data)
           props.history.push('/login');
@@ -22,6 +34,8 @@ function Login(props) {
       })
   }
   return (
+    <>
+      <Navigation onLogout={logoutHandler} />
     <section className="form">
       <h2 className="title">Log In:</h2>
       <form id="log-in" onSubmit={handleLogin}>
@@ -31,10 +45,11 @@ function Login(props) {
         <input type="password" required
           onChange={(e) => setPass(e.target.value)}
         />
-        <input type="submit" className="btn" />
+        <input type="submit" className="btn"/>
         <Link to="/signup">New here? Sign Up!</Link>
       </form>
     </section>
+    </>
   );
 }
 
