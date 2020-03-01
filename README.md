@@ -58,8 +58,9 @@ And finally the server will be loaded!
 
 5.) Users can view the post without logging in.
 
-
-
 # Author
 Satyam Chaudhary
+
+If you have any difficulty in building up the code in the repository,please mail me at 
+17157@iiitu.ac.in
 
