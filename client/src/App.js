@@ -41,7 +41,7 @@ class App extends React.Component {
         
       <HashRouter basename="/">
       {/* <Navigation onLogout={this.logoutHandler} /> */}
-        <Route path="/" component={Home} exact />
+        <Route path="/" component={Posts} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/logout" component={Logout} exact />
         <Route path="/signup" component={Signup} exact />

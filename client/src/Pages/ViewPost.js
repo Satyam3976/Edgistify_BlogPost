@@ -22,22 +22,11 @@ class ViewPost extends React.Component {
       }
     ]
   }
-
-  // onChangeText = (e) => {
-  //   const newState = { ...this.state.comment };
-  //   // newState[e.target.name] = e.target.value;
-  //   this.setState(newState);
-  // }
-
-
-
   handleChange=()=>{
-      // const { gigID } = this.props.location.state;
       let hash = this.props.location.hash;
       let postID = hash.split('#')[1];
       axios.post('//localhost:3000/post/displayPost', { postID })
         .then(res => {
-          console.log(res);
           this.setState({ post: res.data.post });
           this.setState({comment: res.data.comment});
         })
@@ -47,12 +36,10 @@ class ViewPost extends React.Component {
         })  
   }
   componentDidMount() {
-    // const { gigID } = this.props.location.state;
     let hash = this.props.location.hash;
     let postID = hash.split('#')[1];
     axios.post('//localhost:3000/post/displayPost', { postID })
       .then(res => {
-        console.log(res);
         this.setState({ post: res.data.post });
         this.setState({comment: res.data.comment});
       })
@@ -64,7 +51,6 @@ class ViewPost extends React.Component {
 
 
   logoutHandler = () => {
-    // this.setState({ loggedIn: false});
     localStorage.setItem('userID', '');
     localStorage.setItem('token', '');
     localStorage.setItem('auth', 'false');
@@ -73,7 +59,6 @@ class ViewPost extends React.Component {
 
   render() {
     const { comment } = this.state;
-    console.log(comment);
     const { post } = this.state;
     return (
       <>
@@ -82,11 +67,9 @@ class ViewPost extends React.Component {
         {
           <React.Fragment>
           <div className="container">
-            <div key={post._id} classame="">
+            <div key={post._id} className="container-po">
               <h2>Title: {post.title}</h2>
               <p> {post.content}</p>
-           
-
             </div>
             <div className="viewPostComment">
                 <div className="comments">

@@ -4,6 +4,7 @@ import axios from 'axios';
 import Navigation from '../Shared/Navigation';
 import "../styles/gigslist.css";
 import { Link } from "react-router-dom";
+import logo from './Edgistify.jpg';
 
 class Posts extends Component {
   constructor(props) {
@@ -21,7 +22,6 @@ class Posts extends Component {
   }
 
   logoutHandler = () => {
-    // this.setState({ loggedIn: false});
     localStorage.setItem('userID', '');
     localStorage.setItem('token', '');
     localStorage.setItem('auth', 'false');
@@ -38,7 +38,6 @@ class Posts extends Component {
   }
   render() {
     return (
-
       <React.Fragment>
       <Navigation onLogout={this.logoutHandler} />
       <section id="gig-cards-list">
@@ -46,20 +45,13 @@ class Posts extends Component {
           return (
             <div key={e._id} className="gig-card">
               <div className="postlist">
-                <img src="https://images.unsplash.com/photo-1558980394-a3099ed53abb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" 
+                <img src={logo} 
                 alt="Italian Trulli" className="postimg" />
                 </div>
-              {/* <div>
-                <h2>{e.title}</h2>
-                <p>{e.desc}</p>
-                <h4>Offer: {e.offer}</h4>
-              </div> */}
-              <div> 
-              <h2>{e.title}</h2>
-               
-                </div>
               <div className="postlink">
-              {/* <Link to={`viewgig#${e._id}`}>View</Link> */}
+                <div> 
+                <h2>{e.title}</h2> 
+                </div>
                <Link to={`ViewPost#${e._id}`}>View</Link>
               </div>
             </div>

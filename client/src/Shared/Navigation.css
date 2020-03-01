@@ -31,8 +31,8 @@
     border-bottom: 2px solid #4caf50;
 }
 
-@media only screen and (max-width: 320px) {
-    .navbar .logout-button{
-        font-size: 10px;
+@media(max-width: 400px) {
+    .navbar .logout-button:hover{
+        border-bottom: none;
     }
 }

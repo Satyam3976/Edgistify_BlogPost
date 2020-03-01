@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { PromiseProvider } from "mongoose";
-import { PropTypes } from 'react'
+
+
 import Navigation from "../Shared/Navigation";
 import { useAlert } from 'react-alert'
 
@@ -17,7 +17,6 @@ const Login = (props)=> {
 
   const alert = useAlert()
 
-  console.log(props.updateUser);
   const [email, setEmail] = useState('');
   const [password, setPass] = useState('');
   const handleLogin = (e) => {
@@ -39,20 +38,19 @@ const Login = (props)=> {
   return (
     <>
       <Navigation onLogout={logoutHandler} />
-    <section className="form">
-      <h2 className="title">Log In:</h2>
-      <form id="log-in" onSubmit={handleLogin}>
-        <label>Email or Username:</label>
-        <input type="text" required onChange={(e) => setEmail(e.target.value)} />
-        <label>Password :</label>
-        <input type="password" required
-          onChange={(e) => setPass(e.target.value)}
-        />
-        <button type="submit" className="btn">Login</button>
-        {/* <input type="submit" className="btn"/> */}
-        <Link to="/signup">New here? Sign Up!</Link>
-      </form>
-    </section>
+      <section className="form">
+        <h2 className="title">Log In:</h2>
+        <form id="log-in" onSubmit={handleLogin}>
+          <label>Email or Username:</label>
+          <input type="text" required onChange={(e) => setEmail(e.target.value)} />
+          <label>Password :</label>
+          <input type="password" required
+            onChange={(e) => setPass(e.target.value)}
+          />
+          <button type="submit" className="btn">Login</button>
+          <Link to="/signup">New here? Sign Up!</Link>
+        </form>
+      </section>
     </>
   );
 }
