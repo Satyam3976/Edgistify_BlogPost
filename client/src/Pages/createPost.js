@@ -43,13 +43,10 @@ class Post extends React.Component {
       .post("/post/createPost", {
         title,
         content,
-        // offer,
-        // deadline,
-        // negotiable,
         userId
       })
       .then(res => {
-        this.props.history.push('/')
+        this.props.history.push('/displayPost')
       })
       .catch(err => console.error(err));
   }

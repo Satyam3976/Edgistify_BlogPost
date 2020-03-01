@@ -22,10 +22,7 @@ class Signup extends React.Component {
         if (res.data.success) {
           console.log(res.data)
           localStorage.setItem('token', res.data.accessToken)
-          this.props.history.push('/');
-          this.props.handle({
-            loggedIn: true
-          });
+          this.props.history.push('/displayPost');
         } else {
           console.log(res.data)
           this.props.history.push('/signup');

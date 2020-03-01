@@ -5,6 +5,7 @@
 // import Header from './Header';
 // import NavLinks from './NavLinks';
 import './Navigation.css';
+import Header from './Header';
 // import {
 //     BrowserRouter as Router,
 //     Route,
@@ -88,12 +89,14 @@ export default class Navigation extends Component {
   render() {
     return (
       <div className="navbar">
+        <Header>
         <h1 >
-             <Link to="/" className="title">YourPlaces</Link>
+             <Link to="/displayPost" className="title">BlogPost</Link>
         </h1>
         <nav className="main-navigation__header-nav">
-             {this.state.auth === true ? <> <Link to='/logout' className="logout-button" onClick={() => this.setState({auth:false})} >Logout</Link> <Link to="/createPost" className="logout-button" >Post A Gig</Link> </> : <> <Link to="/login" className="logout-button">Login</Link> <Link to="/signup" className="logout-button">SignUp</Link> </>} 
+             {this.state.auth === true ? <> <Link to="/createPost" className="logout-button" >Create Post</Link> <Link to='/logout' className="logout-button" onClick={() => this.setState({auth:false})} >Logout</Link> </> : <> <Link to="/signup" className="logout-button">SignUp</Link> <Link to="/login" className="logout-button">Login</Link> </>} 
            </nav>
+        </Header>   
       </div>
     )
   }

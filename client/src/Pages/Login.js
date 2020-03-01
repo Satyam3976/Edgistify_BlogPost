@@ -14,6 +14,8 @@ const logoutHandler = () => {
 
 const Login = (props)=> {
 
+
+
   console.log(props.updateUser);
   const [email, setEmail] = useState('');
   const [password, setPass] = useState('');
@@ -26,7 +28,6 @@ const Login = (props)=> {
           localStorage.setItem('userID', res.data.userID)
           localStorage.setItem('auth', "true")
           props.history.push('/displayPost');
-          //props.updateUser({loggedIn: true})
         } else {
           console.log(res.data)
           props.history.push('/login');
