@@ -14,7 +14,7 @@ Step 1 : Clone the repository
 
          git clone "https://github.com/Satyam3976/Edgistify_BlogPost.git"
 
-Step 2 : Change directory to Edgistify_BlogPost and install node_modules
+Step 2 : Open a terminal.Change directory to Edgistify_BlogPost and install node_modules
 
          cd Edgistify_BlogPost/
 	 
@@ -28,7 +28,7 @@ Step 3 : Open a new terminal and change directory to Edgistify_BlogPost/client a
 
 
 
-Step 4 : You will need to run Backend & Frontend seperately!u will need to run Backend & Frontend seperately!
+Step 4 : You will need to run Backend & Frontend seperately!
 
 	    In the first terminal where directory is Edgistify_BlogPost run the command npm start 
 	 
@@ -46,6 +46,15 @@ And finally the server will be loaded!
 3.)Express - Node.js web application framework
 
 4.)MongoDB - Database Management
+
+# Functionalities in the app
+1.) Register and login using valid email ID.
+2.) Website have responsive layouts which automatically adjust and adapt to any device screen size.
+3.) Users can view the post and also comment on the post after logging in.
+4.) Users can also post after logging in.
+5.) Users can view the post without logging in.
+
+
 
 # Author
 Satyam Chaudhary
