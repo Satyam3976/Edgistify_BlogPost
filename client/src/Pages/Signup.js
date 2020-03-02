@@ -18,7 +18,6 @@ class Signup extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
     let { name, email, password } = this.state;
     axios.post('//localhost:3000/auth/add', { name: name, email: email, password: password })
       .then(res => {

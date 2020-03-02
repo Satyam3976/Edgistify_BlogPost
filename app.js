@@ -5,10 +5,17 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 
 const app = express();
+const PORT = process.env.PORT || 3000 ;
 
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/edgistify-blog', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
 
 app.use(cors());
 
@@ -33,21 +40,26 @@ app.use('/auth', authRoutes);
 app.use('/post', postRoutes);
 app.use(commentRoutes);
 
-
-app.get('/', (req, res) => {
+app.get('/displayPost', (req, res) => {
   res.send('Welcome')
 })
 
-mongoose.connect(
-'mongodb+srv://csatyam:satyam@cluster0-0zlwo.mongodb.net/test?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}
-)
-  .then(result => {
-    console.log("Successfully connected");
-    app.listen(3000);
+
+
+if(process.env.NODE_ENV === 'production')
+{
+  app.use(express.static('client/build'));
+
+
+  app.get('*',(req,res) => {
+    res.sendFile(path.join(__dirname,'client','build','index.html'));
   })
-  .catch(err => {
-    console.log("could not listen to 3000");
-  });
+}
+
+
+
+  
+    app.listen(PORT , () =>{
+      console.log(`server running at port: ${PORT}`);
+    });
+ 

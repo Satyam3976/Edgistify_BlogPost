@@ -76,8 +76,9 @@ header > h1 > a {
   box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
   border: none;
   height: 40px;
-  width: 70px;
+  width: 55px;
   margin-left: 35%;
+  margin-bottom: 10px;
 }
 
 #log-in > label {
