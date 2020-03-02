@@ -41,7 +41,7 @@ const Login = (props)=> {
       <section className="form">
         <h2 className="title">Log In:</h2>
         <form id="log-in" onSubmit={handleLogin}>
-          <label>Email or Username:</label>
+          <label>Email:</label>
           <input type="text" required onChange={(e) => setEmail(e.target.value)} />
           <label>Password :</label>
           <input type="password" required
