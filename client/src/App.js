@@ -18,8 +18,10 @@ class App extends React.Component {
     this.state = {
       loggedIn: false
     }
-
-  this.updateUser=this.updateUser.bind(this);
+  
+  localStorage.setItem('userID', '');
+  localStorage.setItem('token', '');
+  localStorage.setItem('auth', '');
   }
   updateUser(userObject){
     this.setState(userObject);
@@ -31,6 +33,8 @@ class App extends React.Component {
     localStorage.setItem('token', '');
     localStorage.setItem('auth', 'false');
   };
+
+  
   
   render(){
   return (
@@ -50,11 +54,6 @@ class App extends React.Component {
         <Route path="/viewPost" component={ViewPost} exact />
         {/* <Navigation loggedIn={this.state.loggedIn} onLogout={this.logoutHandler} updateUser={this.updateUser.bind(this)}/> */}
       </HashRouter>
-      {/* <img
-        src="https://t3.ftcdn.net/jpg/02/31/04/60/240_F_231046089_SjH8WEU8VNfodwNPBTAk7o5oDQriuYVC.jpg"
-        alt="bkg"
-        id="bkg"
-      /> */}
       </React.Fragment>
     </div>
   );
