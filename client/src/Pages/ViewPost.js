@@ -25,7 +25,7 @@ class ViewPost extends React.Component {
   handleChange=()=>{
       let hash = this.props.location.hash;
       let postID = hash.split('#')[1];
-      axios.post('//localhost:3000/post/displayPost', { postID })
+      axios.post('/post/displayPost', { postID })
         .then(res => {
           this.setState({ post: res.data.post });
           this.setState({comment: res.data.comment});
@@ -38,7 +38,7 @@ class ViewPost extends React.Component {
   componentDidMount() {
     let hash = this.props.location.hash;
     let postID = hash.split('#')[1];
-    axios.post('//localhost:3000/post/displayPost', { postID })
+    axios.post('/post/displayPost', { postID })
       .then(res => {
         this.setState({ post: res.data.post });
         this.setState({comment: res.data.comment});

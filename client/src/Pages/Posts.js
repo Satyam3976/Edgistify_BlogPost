@@ -28,7 +28,7 @@ class Posts extends Component {
   };
 
   componentDidMount() {
-    axios.get('//localhost:3000/post/displayPosts')
+    axios.get('/post/displayPosts')
       .then(res => {
         this.setState({ posts: res.data.posts });
       })

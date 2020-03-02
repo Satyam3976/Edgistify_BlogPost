@@ -8,7 +8,7 @@ class Header extends Component {
       <header>
         <h1>
           <HashRouter>
-            <Link to="/">QuickWork</Link>
+            <Link to="/displayPost">Edgistify</Link>
           </HashRouter>
         </h1>
       </header>

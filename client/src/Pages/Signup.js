@@ -19,7 +19,7 @@ class Signup extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     let { name, email, password } = this.state;
-    axios.post('//localhost:3000/auth/add', { name: name, email: email, password: password })
+    axios.post('/auth/add', { name: name, email: email, password: password })
       .then(res => {
         if (res.data.success) {
           localStorage.setItem('token', res.data.accessToken)
