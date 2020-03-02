@@ -7,10 +7,6 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000 ;
 
-
-app.set('view engine', 'ejs');
-app.set('views', 'views');
-
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/edgistify-blog', {
     useNewUrlParser: true,

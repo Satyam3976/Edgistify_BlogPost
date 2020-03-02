@@ -1,7 +1,7 @@
 {
-  "name": "electrothon-backend",
+  "name": "edgistify-blogpost",
   "version": "1.0.0",
-  "description": "electrothon-project",
+  "description": "A Blogging App",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shwetagurnani/Electrothon-backend.git"
+    "url": "git+https://github.com/Satyam3976/Edgistify_BlogPost"
   },
-  "author": "shweta-praveen-yash",
+  "author": "satyam-chaudhary",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shwetagurnani/Electrothon-backend/issues"
+    "url": "https://github.com/Satyam3976/Edgistify_BlogPost/issues"
   },
-  "homepage": "https://github.com/shwetagurnani/Electrothon-backend#readme",
+  "homepage": "https://github.com/Satyam3976/Edgistify_BlogPost#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",

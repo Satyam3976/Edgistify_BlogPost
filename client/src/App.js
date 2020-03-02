@@ -28,7 +28,6 @@ class App extends React.Component {
   };
 
   logoutHandler = () => {
-    // this.setState({ loggedIn: false});
     localStorage.setItem('userID', '');
     localStorage.setItem('token', '');
     localStorage.setItem('auth', 'false');
@@ -38,13 +37,9 @@ class App extends React.Component {
   
   render(){
   return (
-    <div id="page-container">
-      {/* <Header /> */}
-      
-      <React.Fragment>
-        
+    <div id="page-container">      
+      <React.Fragment>      
       <HashRouter basename="/">
-      {/* <Navigation onLogout={this.logoutHandler} /> */}
         <Route path="/" component={Posts} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/logout" component={Logout} exact />
@@ -52,7 +47,6 @@ class App extends React.Component {
         <Route path="/displayPost" component={Posts} exact />
         <Route path="/createPost" component={createPost} exact />
         <Route path="/viewPost" component={ViewPost} exact />
-        {/* <Navigation loggedIn={this.state.loggedIn} onLogout={this.logoutHandler} updateUser={this.updateUser.bind(this)}/> */}
       </HashRouter>
       </React.Fragment>
     </div>
