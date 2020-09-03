@@ -50,6 +50,23 @@ And finally the server will be loaded!
 
 4.)MongoDB - Database Management
 
+# Screenshots
+- Landing Page
+![WhatsApp Image 2020-09-03 at 6 20 02 PM](https://user-images.githubusercontent.com/25302027/92117094-591b3a00-ee12-11ea-955a-a56a0866703e.jpeg)
+
+- Login
+![WhatsApp Image 2020-09-03 at 6 20 03 PM (1)](https://user-images.githubusercontent.com/25302027/92117107-5c162a80-ee12-11ea-9a10-d6cb5d23d0df.jpeg)
+
+- Register
+![WhatsApp Image 2020-09-03 at 6 20 04 PM (1)](https://user-images.githubusercontent.com/25302027/92117110-5ddfee00-ee12-11ea-840e-a07b2d69a7fb.jpeg)
+
+- Write a Blog
+![WhatsApp Image 2020-09-03 at 6 20 03 PM](https://user-images.githubusercontent.com/25302027/92117103-5b7d9400-ee12-11ea-9222-bc1ee3d555cb.jpeg)
+
+- View a Blog
+![WhatsApp Image 2020-09-03 at 6 20 04 PM](https://user-images.githubusercontent.com/25302027/92117108-5caec100-ee12-11ea-9e33-fc455f5efc9e.jpeg)
+
+
 # Functionalities in the app
 1.) Register and login using valid email ID.
 
